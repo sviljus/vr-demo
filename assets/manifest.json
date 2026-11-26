@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "assets": [
+    {
+      "path": "assets/logo.svg",
+      "identity": "Vaimuraamat logo",
+      "source_url": "https://vaimuraamat.ee/wp-content/uploads/2025/11/vaimuraamat_logo-1.svg",
+      "author": "Vaimuraamat website; underlying authorship not independently established",
+      "license": "Brand asset; no open license asserted",
+      "permission_basis": "User-authorized same-brand demonstration publication",
+      "checked_on": "2026-11-26",
+      "sha256": "d92b961500ea46a5011db542bcee2757c6eb4e4084127674815cae6186b94a6c"
+    },
+    {
+      "path": "assets/bracelets/bracelet-1.jpg",
+      "identity": "Vaimuraamat bracelet with multicolored beads and butterfly pendant",
+      "source_url": "https://vaimuraamat.ee/wp-content/uploads/2026/10/edukusekoodi-kaevoru-varvilised-helmed-liblikas-768x1024.jpg",
+      "author": "Vaimuraamat website; underlying authorship not independently established",
+      "license": "Product photo; no open license asserted",
+      "permission_basis": "User-authorized same-brand demonstration publication",
+      "checked_on": "2026-11-26",
+      "sha256": "dea51da61ed0db35aa9b0c0b1ca6d53a1573af677d0b00982c05b2445b471d06"
+    },
+    {
+      "path": "assets/bracelets/bracelet-2.jpg",
+      "identity": "Vaimuraamat bracelet with pink beads and heart pendant",
+      "source_url": "https://vaimuraamat.ee/wp-content/uploads/2026/10/edukusekoodi-kaevoru-roosa-sudameripats-768x1024.jpg",
+      "author": "Vaimuraamat website; underlying authorship not independently established",
+      "license": "Product photo; no open license asserted",
+      "permission_basis": "User-authorized same-brand demonstration publication",
+      "checked_on": "2026-11-26",
+      "sha256": "1247cff87915bdd52214f7586d68c89fe1bad85dac5642e9ef1260a072d82b21"
+    },
+    {
+      "path": "assets/crystals/rose-quartz.jpg",
+      "identity": "Uncut rose quartz; specimen photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Uncut_rose_quartz.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Uncut_rose_quartz.jpg",
+      "author": "Ozguy89",
+      "license": "Public domain release by the author",
+      "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "modifications": "None; CSS display sizing only",
+      "checked_on": "2026-11-26",
+      "sha256": "9546b3c18845f4aefd358253fbec817be62c3f75512c5894a2b6a66d4ab42dcc"
+    },
+    {
+      "path": "assets/crystals/moonstone.jpg",
+      "identity": "Orthoclase moonstone; tumbled specimen photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Orthoclase_moonstone.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Orthoclase_moonstone.jpg",
+      "author": "Ra'ike; derived from Simon Eugster's photograph",
+      "license": "CC BY 2.5 (selected from offered license options)",
+      "license_url": "https://creativecommons.org/licenses/by/2.5/",
+      "modifications": "None; CSS display sizing only",
+      "checked_on": "2026-11-26",
+      "sha256": "15d01ced673db5f291541a8d5daff749279a3dc21ed8d143741ece979931a204"
+    }
+  ]
+}

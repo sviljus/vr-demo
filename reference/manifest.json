@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "canonical_route": "JSON -> HTML -> Chromium -> PDF-lib physical-page progress overlay",
+  "data": "data/reading-02.json",
+  "stylebook": "stylebook.md",
+  "physical_page_count": 6,
+  "files": [
+    {
+      "path": "reference/sample-02.pdf",
+      "sha256": "91e7bade1628da2377d37093098d971c01f9d1d3b9d1b6db666781109c4e8d59"
+    },
+    {
+      "path": "reference/pages/page-01.png",
+      "sha256": "2fb029bcf6861cbe6ba31f3d1cd6493fdce576341e9bccc524943997a0e2c4d5"
+    },
+    {
+      "path": "reference/pages/page-02.png",
+      "sha256": "560ad234a0bb3632c8f3fa736c1c376c8aafdae37be9c3ad327a5f692d3b54b6"
+    },
+    {
+      "path": "reference/pages/page-03.png",
+      "sha256": "afcb7bea977b67a9615e41289092fb4cf29124ed2d13e7f240a65b3c3450e4e2"
+    },
+    {
+      "path": "reference/pages/page-04.png",
+      "sha256": "42cadf241f12bcf44c1b8a605bab581253246a14cdbd545aebfeae17708b8422"
+    },
+    {
+      "path": "reference/pages/page-05.png",
+      "sha256": "5c0b516f4ba9166a56af550eea43d7deb0b604030f2b6df4383ebe743789f8d9"
+    },
+    {
+      "path": "reference/pages/page-06.png",
+      "sha256": "a45ecc907edcd08e6a96303009bd6837fc6ccfb8ed42a6929c7e7b122c6b2f5f"
+    }
+  ]
+}

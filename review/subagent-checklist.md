@@ -1,0 +1,54 @@
+# Independent final review brief
+
+Use only after the user has explicitly consented to a real subagent reviewing this document. If you are the main assistant and no subagent capability exists, do not impersonate an independent reviewer. Follow the fallback in `gen.md`.
+
+## Inputs required
+
+Obtain the latest source Word document or source-to-edited mapping, latest edited JSON/text, final rendered PDF, every page PNG, `stylebook.md`, `reference/sample-02.pdf` and the reference page PNGs. Also obtain `assets/manifest.json`, image credits, any confirmed price changes, and explicitly approved design deviations. If an input is missing, identify it and state what cannot be verified.
+
+Record the exact artifact version or file hash. Review the final build, not an earlier draft. Do not rewrite the whole reading unsolicited, and do not approve merely because the main assistant asks you to confirm it is good.
+
+## Required checks
+
+### 1. Source fidelity and Estonian
+
+- Read the entire edited text against the source. Important ideas, examples and practical steps remain intact.
+- Correct spelling, inflection, punctuation, sentence construction, natural word order and `sina` voice.
+- Point A remains the correct specific position; energy number, name, keywords and body references agree.
+- No example's number 2 content has leaked into another energy without support.
+- Stylistic edits are distinguished from substantive additions/removals.
+- Numerology and crystal associations remain symbolic; no deterministic diagnosis, childhood assertion, supernatural ability, future certainty or healing promise has been introduced.
+- Offers and prices match the confirmed source; no invented scarcity, discount or testimonial.
+
+### 2. Stylebook and assets
+
+- Correct website logo, proportional shape, palette, hierarchy and readable type sizes.
+- Calm masthead, clear energy identity, examples, exercise, crystal cards and optional offers follow the component rules.
+- Crystal images are real, correctly identified photos, not the rejected geometric drawings or fabricated specimen photos.
+- Credit text, original-source links and license links are present and agree with the manifest.
+- Bracelet photographs are examples and have a caption stating the custom composition may differ.
+- Any intentional deviation is user-approved and documented rather than concealed.
+
+### 3. Every-page layout comparison
+
+Open every final page image and compare with the corresponding design system in the reference. Do not rely only on extracted text or page 1.
+
+Check margins, alignment, line spacing, heading hierarchy, paragraph rhythm and component widths. Look for clipping, overlap, missing glyphs, stretched photos, text touching borders, orphan headings, split questions/quotes/cards and nearly empty accidental overflow pages. Confirm footer positions, clickable domain, sequential page numbers and working action links.
+
+The page count can differ from the six-page example. A matching layout preserves the design system and readable content flow, not identical paragraph line breaks. Do not demand text deletion to force the reference's page count.
+
+For N actual PDF pages, confirm the full-height 6 mm right-edge track and a pink moving segment of height H/N on each page. Segment i starts `(i−1)H/N` below the top. First segment reaches the top and last reaches the bottom. It is not cumulative and must use actual PDF pages, including overflow pages.
+
+## Report format and decision
+
+Use the fields in `review/report.template.md` when available. Return:
+
+1. reviewed artifact/version and available evidence;
+2. outcome: `PASS`, `FIX_REQUIRED` or `BLOCKED`;
+3. separate outcomes for source/language, style/assets and rendered layout;
+4. findings with severity, exact page/section, observed evidence, violated rule and concrete correction;
+5. unverified items and explicit limitations.
+
+Use `BLOCKED` if the actual PDF or visual evidence cannot be inspected, rather than asserting layout conformity. Use `FIX_REQUIRED` for material language, source, rights, price, clipping or progress errors. Minor editorial suggestions should be identified as suggestions rather than blocking defects.
+
+Do not claim certainty about facts absent from the source. Do not send documents to third-party services or commit them to the public repository. The main assistant must apply confirmed corrections, regenerate affected artifacts and recheck the revised final version before announcing completion.

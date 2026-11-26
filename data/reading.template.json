@@ -1,0 +1,312 @@
+{
+  "schema_version": 1,
+  "number": "",
+  "energy_name": "",
+  "keywords": [
+    "",
+    "",
+    ""
+  ],
+  "tagline": "Isiklik hetk iseenda avastamiseks",
+  "opening_quote": "„Mõnikord aitab üks uus vaatenurk märgata iseendas midagi, mis on seal kogu aeg olemas olnud.“",
+  "pages": [
+    [
+      {
+        "role": "text",
+        "text": ""
+      },
+      {
+        "role": "text",
+        "text": ""
+      },
+      {
+        "role": "heading",
+        "text": "Sinu energia olemus"
+      },
+      {
+        "role": "text",
+        "text": ""
+      },
+      {
+        "role": "text",
+        "text": ""
+      }
+    ],
+    [
+      {
+        "role": "label",
+        "text": "PUNKT A  /  MÄRKAMINE JA SUHTED"
+      },
+      {
+        "role": "label",
+        "text": "Näide igapäevaelust"
+      },
+      {
+        "role": "text",
+        "text": ""
+      },
+      {
+        "role": "text",
+        "text": ""
+      },
+      {
+        "role": "quote",
+        "text": ""
+      },
+      {
+        "role": "heading",
+        "text": "Kui sinu energia on tasakaalus"
+      },
+      {
+        "role": "text",
+        "text": ""
+      },
+      {
+        "role": "text",
+        "text": ""
+      },
+      {
+        "role": "label",
+        "text": "Näide igapäevaelust"
+      },
+      {
+        "role": "text",
+        "text": ""
+      },
+      {
+        "role": "text",
+        "text": ""
+      },
+      {
+        "role": "text",
+        "text": ""
+      }
+    ],
+    [
+      {
+        "role": "label",
+        "text": "PUNKT A  /  AUSUS JA PIIRID"
+      },
+      {
+        "role": "heading",
+        "text": "Kui tasakaal kaob"
+      },
+      {
+        "role": "text",
+        "text": ""
+      },
+      {
+        "role": "label",
+        "text": "Näide igapäevaelust"
+      },
+      {
+        "role": "text",
+        "text": ""
+      },
+      {
+        "role": "text",
+        "text": ""
+      },
+      {
+        "role": "text",
+        "text": ""
+      },
+      {
+        "role": "text",
+        "text": ""
+      },
+      {
+        "role": "heading",
+        "text": "Sinu energia peamine eluõppetund"
+      },
+      {
+        "role": "quote",
+        "text": ""
+      },
+      {
+        "role": "text",
+        "text": ""
+      },
+      {
+        "role": "text",
+        "text": ""
+      }
+    ],
+    [
+      {
+        "role": "label",
+        "text": "PUNKT A  /  TUNNETUSEST TEGUDENI"
+      },
+      {
+        "role": "text",
+        "text": ""
+      },
+      {
+        "role": "text",
+        "text": ""
+      },
+      {
+        "role": "text",
+        "text": ""
+      },
+      {
+        "role": "quote",
+        "text": ""
+      },
+      {
+        "role": "heading",
+        "text": "Hetk iseendale"
+      },
+      {
+        "role": "text",
+        "text": ""
+      },
+      {
+        "role": "card",
+        "text": ""
+      },
+      {
+        "role": "card",
+        "text": ""
+      },
+      {
+        "role": "card",
+        "text": ""
+      },
+      {
+        "role": "text",
+        "text": ""
+      },
+      {
+        "role": "text",
+        "text": ""
+      },
+      {
+        "role": "card",
+        "text": ""
+      }
+    ],
+    [
+      {
+        "role": "label",
+        "text": "PUNKT A  /  SÜMBOOLSED MEELDETULETUSED"
+      },
+      {
+        "role": "heading",
+        "text": "Sinu energiaga seotud kristallid"
+      },
+      {
+        "role": "text",
+        "text": ""
+      },
+      {
+        "role": "crystals",
+        "items": [
+          {
+            "name": "",
+            "image": "",
+            "description": "",
+            "connection": "",
+            "reminder": "",
+            "image_alt": "",
+            "credit_text": "",
+            "credit_url": "",
+            "license_url": ""
+          },
+          {
+            "name": "",
+            "image": "",
+            "description": "",
+            "connection": "",
+            "reminder": "",
+            "image_alt": "",
+            "credit_text": "",
+            "credit_url": "",
+            "license_url": ""
+          }
+        ]
+      },
+      {
+        "role": "label",
+        "text": "Fotod on kivide näited, mitte Vaimuraamatu konkreetsete toodete pildid. Fotoallikad ja litsentsid on viidatud kaartidel."
+      },
+      {
+        "role": "heading",
+        "text": "Sinu teekond jätkub"
+      },
+      {
+        "role": "text",
+        "text": ""
+      }
+    ],
+    [
+      {
+        "role": "label",
+        "text": "PUNKT A  /  KUI SOOVID EDASI AVASTADA"
+      },
+      {
+        "role": "heading",
+        "text": "Kui soovid edasi avastada"
+      },
+      {
+        "role": "text",
+        "text": ""
+      },
+      {
+        "role": "gallery",
+        "items": [
+          {
+            "image": "assets/bracelets/bracelet-1.jpg",
+            "alt": "Vaimuraamatu värviline liblikaripatsiga käevõru."
+          },
+          {
+            "image": "assets/bracelets/bracelet-2.jpg",
+            "alt": "Vaimuraamatu roosade helmeste ja südameripatsiga käevõru."
+          }
+        ]
+      },
+      {
+        "role": "label",
+        "text": "Näited Vaimuraamatu käevõrudest. Personaalse käevõru kivide ja ripatsi valik võib erineda."
+      },
+      {
+        "role": "subheading",
+        "text": "Personaalne käevõru"
+      },
+      {
+        "role": "card",
+        "text": ""
+      },
+      {
+        "role": "card",
+        "text": ""
+      },
+      {
+        "role": "link",
+        "text": "Vaata lähemalt vaimuraamat.ee",
+        "url": "https://vaimuraamat.ee/"
+      },
+      {
+        "role": "subheading",
+        "text": "Isikliku aasta numeroloogiline lugemine"
+      },
+      {
+        "role": "card",
+        "text": ""
+      },
+      {
+        "role": "card",
+        "text": ""
+      },
+      {
+        "role": "link",
+        "text": "Vaata lähemalt vaimuraamat.ee",
+        "url": "https://vaimuraamat.ee/"
+      },
+      {
+        "role": "quote",
+        "text": ""
+      }
+    ]
+  ]
+}

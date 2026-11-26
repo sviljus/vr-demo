@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "units": "mm and pt",
+  "colors": {
+    "text": "#192B43",
+    "masthead": "#111629",
+    "teal": "#57A7B3",
+    "pink": "#EC6A87",
+    "pale": "#EFF6F6",
+    "gold": "#B18A49",
+    "secondary": "#647080",
+    "crystal_card": "#FAF8F3"
+  },
+  "print": {
+    "paper": "A4",
+    "width_mm": 210,
+    "height_mm": 297,
+    "margin_top_mm": 20.5,
+    "margin_sides_mm": 20.5,
+    "margin_bottom_mm": 17,
+    "masthead_height_mm": 28,
+    "progress_width_mm": 6
+  },
+  "type": {
+    "body_family": "Arial",
+    "display_family": "Georgia",
+    "body_pt": 10.5,
+    "body_line_height": 1.4,
+    "title_pt": 27,
+    "heading_pt": 17,
+    "subheading_pt": 14,
+    "number_pt": 68,
+    "quote_pt": 13,
+    "credit_pt": 7.5
+  },
+  "progress": "one segment at [(i-1)/N, i/N] of full physical PDF page height; not cumulative"
+}

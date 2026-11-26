@@ -1,0 +1,10 @@
+node_modules/
+build/
+incoming/
+private/
+review/runs/
+.env
+.env.*
+.DS_Store
+__pycache__/
+*.pyc

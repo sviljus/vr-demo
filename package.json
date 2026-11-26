@@ -1,0 +1,13 @@
+{
+  "name": "vaimuraamat-reading-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Estonian Vaimuraamat editing and reference-driven PDF generation",
+  "scripts": {
+    "build:sample": "python3 scripts/build.py data/reading-02.json --out build/sample-02.html",
+    "pdf:sample": "node scripts/pdf.cjs build/sample-02.html build/sample-02.pdf",
+    "validate:sample": "python3 scripts/validate.py data/reading-02.json"
+  },
+  "dependencies": {"playwright": "1.62.1", "pdf-lib": "1.17.1"},
+  "engines": {"node": ">=20", "python": ">=3.10"}
+}

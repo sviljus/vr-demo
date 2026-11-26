@@ -1,0 +1,287 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/sviljus/vr-demo/main/data/reading.schema.json",
+  "title": "Vaimuraamat production reading",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "number": {
+      "type": "string",
+      "pattern": "^[1-9][0-9]*$"
+    },
+    "energy_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "keywords": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "tagline": {
+      "type": "string",
+      "minLength": 1
+    },
+    "opening_quote": {
+      "type": "string",
+      "minLength": 1
+    },
+    "pages": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "role": {
+                  "const": "text"
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "role",
+                "text"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "role": {
+                  "const": "heading"
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "role",
+                "text"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "role": {
+                  "const": "subheading"
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "role",
+                "text"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "role": {
+                  "const": "label"
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "role",
+                "text"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "role": {
+                  "const": "quote"
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "role",
+                "text"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "role": {
+                  "const": "card"
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "role",
+                "text"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "role": {
+                  "const": "link"
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "url": {
+                  "type": "string",
+                  "pattern": "^https://"
+                }
+              },
+              "required": [
+                "role",
+                "text",
+                "url"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "role": {
+                  "const": "crystals"
+                },
+                "items": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "image": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "image_alt": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "description": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "connection": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "reminder": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "credit_text": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "credit_url": {
+                        "type": "string",
+                        "pattern": "^https://"
+                      },
+                      "license_url": {
+                        "type": "string",
+                        "pattern": "^https://"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "image",
+                      "image_alt",
+                      "description",
+                      "connection",
+                      "reminder",
+                      "credit_text",
+                      "credit_url",
+                      "license_url"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": [
+                "role",
+                "items"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "role": {
+                  "const": "gallery"
+                },
+                "items": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "image": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "alt": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "image",
+                      "alt"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": [
+                "role",
+                "items"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "number",
+    "energy_name",
+    "keywords",
+    "tagline",
+    "opening_quote",
+    "pages"
+  ],
+  "additionalProperties": false
+}
