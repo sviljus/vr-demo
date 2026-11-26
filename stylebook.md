@@ -1,6 +1,6 @@
 # Vaimuraamat stylebook
 
-Version 1.0 · 26 November 2026. This English specification governs the Estonian reading series. Read it together with `gen.md`. The canonical rendered example is `reference/sample-02.pdf`; the HTML/CSS implementation is `templates/reading.html`. A current explicit user design change overrides this specification and should be recorded as a deviation.
+Version 1.0 · 26 November 2026. This English specification governs the Estonian reading series. Read it together with `gen.md`. The canonical rendered example is `reference/sample-02.pdf`, with an editable counterpart in `reference/sample-02.docx`; the HTML/CSS implementation is `templates/reading.html`. A current explicit user design change overrides this specification and should be recorded as a deviation.
 
 ## Design purpose
 
@@ -59,7 +59,7 @@ The central number is the visual focus. Do not add decorative rings, glow or ran
 
 Running headers are small and quiet: brand at the left, Point A context at the right. The footer has a fine teal rule, “Vaimuraamat” left, a clickable `vaimuraamat.ee` centered and the automatic page number right. It must not collide with the body, wrap awkwardly or repeat the current browser URL and print date.
 
-The manual DOCX template uses Word styles and may have different pagination and masthead geometry. It is not the canonical print rendering. Ordinary edits must not promise that Word automatically recalculates the pink segment after arbitrary page-count changes.
+Every reading requires both an editable DOCX and PDF from the same final content. `scripts/build_docx.py` generates Word output, while the manual DOCX template provides a styling reference. Word uses real paragraph styles and may have different pagination and masthead geometry. It is not the canonical print rendering. Ordinary edits must not promise that Word automatically recalculates the pink segment after arbitrary page-count changes.
 
 ## Side-progress indicator
 
@@ -85,7 +85,9 @@ Maintain the semantic progression: introduction → energy essence → balanced 
 
 **Crystal cards:** two equal columns in the reference, each with real photo, name, symbolic meaning, energy connection, personal reminder and credits. Photo box: 56 × 32 mm, `object-fit: contain`, original aspect ratio preserved. Do not crop away the stone, mislabel a specimen or imply a photo is a specific shop product when it is not. Keep cards together where feasible. A card taller than an entire page requires an editorial/layout decision; do not fix it by shrinking to unreadable type.
 
-The sample photograph sources are Ozguy89's public-domain uncut rose quartz and Ra'ike's moonstone image derived from Simon Eugster, used under CC BY 2.5. Preserve the exact credits and license links from the data and asset manifest. Asset appearance is illustrative and does not establish any claimed metaphysical effect.
+The currently committed sample photograph sources are Ozguy89's public-domain uncut rose quartz and Ra'ike's moonstone image derived from Simon Eugster, used under CC BY 2.5. Preserve the exact credits and license links from the data and asset manifest. Asset appearance is illustrative and does not establish any claimed metaphysical effect. Their presence in the repository does not prove that the newly required 3–4-candidate audit was performed; perform a retrospective audit before claiming that check has passed.
+
+**Mandatory photo selection:** for each crystal, obtain and visually inspect 3–4 candidate photographs. Record candidate source/image URLs, actual inspection status, mineral identity and independent mineralogical/museum verification, specimen form (rough/tumbled/cut), lighting/appearance notes, similarity to the representative majority, selected/rejected reasons, reuse license and attribution. Choose a correctly identified, representative image; majority appearance is a visual aid, not mineral identification evidence. Allow legitimate differences from specimen form or lighting. Avoid mislabeling rainbow moonstone/labradorite as orthoclase/adularia moonstone. If actual images cannot be opened, disclose the missing access and request images or capability; never mark unseen candidates as inspected. Keep the evidence available to the final reviewer.
 
 **Bracelet gallery:** two brand example photographs, approximately 56 mm high, aspect ratio retained. Include the caption explaining that the personal selection of stones and pendant can differ. A gallery is not evidence that the pictured bracelet is the prescribed number 2 product.
 
@@ -101,6 +103,6 @@ Frame numerology and crystal associations as symbolic interpretation. Do not inf
 
 ## Release quality
 
-Validate the data, render the actual output and inspect every page. Check all Estonian characters, headings, questions, photos, credits, links, prices, footer and progress positions. Match the reference's system while allowing content-driven pagination. Remove duplicate links, clipping, collisions, split cards and accidental nearly empty overflow pages.
+Validate the data, generate both editable DOCX and PDF from the same final content, render both and inspect every page. Verify matching final text, energy identity, exercises, prices, photographs and credits across formats. If either required format is absent or unchecked, completion is blocked unless the user explicitly waives that specific requirement. Check all Estonian characters, headings, questions, photos, credits, links, prices, footer and progress positions. Match the reference's system while allowing content-driven pagination. Remove duplicate links, clipping, collisions, split cards and accidental nearly empty overflow pages.
 
 Before completion, apply the independent-review consent workflow in `gen.md`. A technical build pass is not linguistic review; extracted text is not visual review; self-review is not an independent subagent. Record remaining limitations and the version actually checked. Never call an unverified draft complete.

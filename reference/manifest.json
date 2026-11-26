@@ -32,6 +32,11 @@
     {
       "path": "reference/pages/page-06.png",
       "sha256": "a45ecc907edcd08e6a96303009bd6837fc6ccfb8ed42a6929c7e7b122c6b2f5f"
+    },
+    {
+      "path": "reference/sample-02.docx",
+      "sha256": "1b5cf99d9a4f338bdb77a901a708c92130dbfe83036071856075ecb72d59b526"
     }
-  ]
+  ],
+  "word_output": "reference/sample-02.docx (editable companion; content parity, engine-dependent layout)"
 }

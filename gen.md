@@ -12,7 +12,7 @@ Your job is to produce the edited, designed document, not only advice about it. 
 
 If no Word file has been provided, begin in Estonian with this message, adjusting only factual capability statements:
 
-> Tere tulemast Vaimuraamatu lugemise toimetamise ja kujundamise töövoogu! Palun laadi üles oma Wordi fail (.docx). Toimetan teksti eesti keeles ning kujundan selle siin oleva stiiliraamatu ja näidis-PDF-i järgi.
+> Tere tulemast Vaimuraamatu lugemise toimetamise ja kujundamise töövoogu! Palun laadi üles oma Wordi fail (.docx). Toimetan teksti eesti keeles ning kujundan selle siin oleva stiiliraamatu ja näidis-PDF-i järgi. Väljastan nii muudetava Wordi faili kui ka PDF-i.
 >
 > Kas oled nõus, et enne lõpptulemuse valmiks kuulutamist kontrollib eraldi alamagent dokumendi vastavust stiiliraamatule, eesti keele korrektsust ja küljenduse kooskõla näidisega? Kui selle vestluse keskkond alamagentide kasutamist ei võimalda, ütlen seda enne kontrolli ja pakun eraldi enesekontrolli.
 
@@ -35,10 +35,10 @@ Start by reading these files, in order:
 
 1. `gen.md` — workflow and interaction contract.
 2. `stylebook.md` — normative editorial and visual design rules.
-3. `reference/sample-02.pdf` — canonical rendered design reference.
+3. `reference/sample-02.pdf` and `reference/sample-02.docx` — canonical PDF design reference and its editable Word counterpart.
 4. `reference/pages/` — page PNGs for inspecting the same reference without a PDF renderer.
 5. `data/reading.schema.json` and `data/reading-02.json` — exact machine structure and complete worked example.
-6. `templates/reading.html`, `scripts/build.py`, `scripts/pdf.cjs` — implementation of the fixed design and PDF progress indicator.
+6. `templates/reading.html`, `scripts/build.py`, `scripts/pdf.cjs` and `scripts/build_docx.py` — implementation of the fixed design, PDF progress indicator and required editable Word output.
 7. `assets/manifest.json` and `RIGHTS.md` — identity, provenance and reuse constraints for images.
 8. `docs/usage.md` — reproducible local commands and environment requirements.
 9. `review/subagent-checklist.md` and `review/report.template.md` — final quality gate and review evidence structure.
@@ -65,11 +65,13 @@ Use the repository's actual default branch and current file contents if these li
 | `stylebook.md` | Canonical style rules | Only on explicit design-change request |
 | `templates/reading.html` | HTML/CSS design, with build placeholders | No routine redesign |
 | `templates/style-tokens.json` | Machine-readable palette, dimensions and type scale | Change only with an approved style change |
-| `templates/reading.docx` | Optional editable Word template | Populate a copy |
+| `templates/reading.docx` | Editable Word template and styling reference | Populate a copy or use the DOCX generator |
 | `data/reading.schema.json` | Supported data structure | No routine schema changes |
 | `data/reading.template.json` | Unfilled content scaffold | Copy and fill; do not render unfilled |
 | `data/reading-02.json` | Complete number 2 example | Copy as structural reference, not factual source |
 | `scripts/build.py` | Escaped JSON-to-HTML builder, embeds local images | Execute; modify only for a required implementation fix |
+| `scripts/build_docx.py` | Generates editable Word from the same finalized JSON as the PDF | Execute for every reading; requires `python-docx` from `requirements.txt` |
+| `requirements.txt` | Pinned Python document-generation dependency | Install into the supported environment |
 | `scripts/pdf.cjs` | Chromium PDF export, then page-count-based side indicator | Execute; do not replace with browser screenshots |
 | `package.json`, `package-lock.json` | Pinned Node dependencies and command shortcuts | Use `npm ci`; do not silently upgrade |
 | `scripts/create_schema.py` | Maintainer helper for regenerating the documented JSON Schema | Not required for ordinary reading generation |
@@ -79,10 +81,12 @@ Use the repository's actual default branch and current file contents if these li
 | `assets/bracelets/` | Brand bracelet example photographs | Optional examples, not a guaranteed custom design |
 | `assets/manifest.json` | Asset provenance and license metadata | Update when an authorized asset is added |
 | `reference/README.md`, `reference/manifest.json` | Canonical sample provenance, page count and hashes | Update together with an approved new baseline |
+| `reference/sample-02.docx` | Editable Word counterpart to the canonical sample | Never overwrite with an ordinary client reading |
 | `reference/sample-02.pdf` | Canonical output appearance | Never overwrite with an ordinary client reading |
 | `reference/pages/page-*.png` | Rendered canonical pages | Same restriction as the sample PDF |
 | `docs/usage.md` | Build, export and verification instructions | Consult |
 | `review/subagent-checklist.md` | Independent review brief | Give to an approved reviewer |
+| `review/crystal-image-review.template.md` | Per-crystal record for 3–4 visually inspected candidates, identity and rights | Fill a private copy for every crystal |
 | `review/report.template.md` | Blank review evidence form | Fill a private copy |
 | `incoming/` | Ignored private source uploads | Local working files only |
 | `build/` | Ignored generated client outputs and previews | Local working files only |
@@ -145,7 +149,17 @@ The top-level identity is defined once by `number`, `energy_name`, `keywords`, `
 
 `pages` contains arrays of editorial content groups. Each group begins on a new PDF page, but may flow onto more than one physical page. The group count is not the actual final PDF page count. Supported block roles are `text`, `heading`, `subheading`, `label`, `quote`, `card`, `link`, `crystals` and `gallery`; use their exact documented fields.
 
-Crystal items need the name, image, accurate alternative text, description, energy connection, reminder and required attribution/license fields. Real crystal photographs are mandatory: the user explicitly rejected arbitrary geometric illustrations. Do not recreate those drawings or disguise generic AI art as photographs of identified minerals. If no suitable authorized image is available, explain the gap and request an appropriate image rather than inventing one. Bracelet images remain examples and must not imply the exact pictured item will be supplied.
+Crystal items need the name, image, accurate alternative text, description, energy connection, reminder and required attribution/license fields. Apply the mandatory candidate-image protocol below to every crystal before selecting its photo. Real crystal photographs are mandatory: the user explicitly rejected arbitrary geometric illustrations. Do not recreate those drawings or disguise generic AI art as photographs of identified minerals. If no suitable authorized image is available, explain the gap and request an appropriate image rather than inventing one. Bracelet images remain examples and must not imply the exact pictured item will be supplied.
+
+### Mandatory crystal-photo candidate audit
+
+For **each crystal**, find **3–4 candidate photographs from identifiable sources and actually open and visually inspect every candidate**. Search-result titles, alt text, thumbnails you cannot inspect, and a seller calling an image “moonstone” do not constitute verified visual inspection. Do not report `inspected: true` unless you saw the actual image.
+
+Compare which candidates depict a representative appearance shared by the majority, but never identify a mineral by visual-majority vote alone. Verify the crystal's identity and relevant appearance against reliable mineralogical or museum sources. Distinguish natural rough, tumbled, polished and cut specimens; note how lighting, white balance, translucency and optical effects can vary. In particular, do not silently substitute rainbow moonstone/labradorite for orthoclase/adularia moonstone. A visually different but correctly identified specimen is not automatically wrong; record why it is or is not representative for this reading.
+
+Keep a private per-crystal candidate table, for example in `review/runs/crystal-photo-audit.md`. For each of the 3–4 candidates record: original source URL; image URL; whether the actual image was visually inspected; stated identity and independent identity-check source; rough/tumbled/cut form; appearance and lighting notes; representative-majority comparison; selected or rejected decision with a concrete reason; reuse rights/license; required author/source attribution. Identify the selected file and make the data/manifest credit match it. Rights and identity are separate checks: visual suitability does not grant reuse permission, and a permissive license does not prove the label is correct.
+
+If fewer than three actual candidate images are accessible, do not fabricate a completed comparison. Explain the limitation in Estonian and request suitable candidate images or an image-access capability. Do not claim this protocol was already completed for committed sample assets merely because they are in the repository: sample photos require a retrospective audit if that evidence is not present. Reuse may retain a previously documented audit only when it genuinely covers the same image, identity and intended use, with the evidence available for review.
 
 Keep image paths inside the repository's asset root and preserve source/credit records. The builder escapes text and embeds local images into a self-contained HTML file. Do not bypass those protections or load remote trackers, fonts or private content into the document.
 
@@ -157,17 +171,18 @@ Follow `docs/usage.md` for current commands. Typical execution from the reposito
 python3 scripts/validate.py build/reading.json
 python3 scripts/build.py build/reading.json --out build/reading.html
 node scripts/pdf.cjs build/reading.html build/reading.pdf
+python3 scripts/build_docx.py build/reading.json --out build/reading.docx
 ```
 
 Use the host's supported or bundled runtime when required. Dependencies are pinned in the repository's package files; `npm ci` and `npx playwright install chromium` prepare a normal local environment. Do not assume the online ChatGPT environment has Node.js, Chromium or shell access.
 
 The canonical output route is JSON → HTML → Chromium PDF → PDF-lib progress overlay. Plain browser “Print to PDF” is not equivalent: it may omit the custom footer or dynamic side indicator. HTML screen view is useful for reading, but PDF page layout is the release authority.
 
-Offer an editable DOCX when requested and supported. The Word template is a manual alternative; it is not a guarantee of pixel-identical export or automatically recomputed progress graphics after arbitrary Word edits. Do not falsely report a DOCX as created if only HTML/PDF exists.
+**Every completed reading must include BOTH an editable Word `.docx` and a PDF, generated from the same finalized JSON/content.** Use `scripts/build_docx.py` and the Python dependencies in `requirements.txt`; do not make DOCX optional or substitute HTML for it. Render and inspect both artifacts, including the Word export, and check their content parity. Word layout and pagination may differ from Chromium, but the document must remain editable and follow the same style system. Do not promise that Word automatically recomputes its progress graphics after arbitrary edits; the final PDF indicator is computed automatically from the actual PDF page count. If either artifact cannot be generated or checked, disclose the exact blocker and do not announce completion unless the user explicitly waives that specific missing requirement. Never claim a Word file exists when only HTML/PDF was produced.
 
 ## 9. Own quality pass and visual comparison
 
-Before independent review, validate data, generate the actual final PDF and inspect every output page. Render pages into PNGs when a renderer is available. A successful process exit, extracted text or a browser screenshot of the first page is insufficient visual verification.
+Before independent review, validate data, generate the actual final PDF and editable DOCX from the same final content, render both, inspect every output page and compare their text, identity, prices, images and credits for parity. Render pages into PNGs when a renderer is available. A successful process exit, extracted text or a browser screenshot of the first page is insufficient visual verification.
 
 Compare the output against `reference/sample-02.pdf` and its page images. Preserve typography, spacing, component structure, logo proportions, readable photo presentation and footer alignment. **Matching layout means matching the design system, not copying number 2 text or forcing every reading to six pages.** Content-dependent page count and paragraph positions may differ. Do not create clipped content to imitate the reference's exact breaks.
 
@@ -177,7 +192,7 @@ If a required operation is unavailable, name the concrete limitation. Supply an 
 
 ## 10. Independent review and release gate
 
-If consent is approved and a real subagent is available, provide it with the edited source mapping, latest rendered PDF, page PNGs, stylebook, canonical reference and `review/subagent-checklist.md`. Ask for concrete findings with page numbers, severity, evidence and proposed corrections. Do not prime it to approve your work or have it inspect an earlier version.
+If consent is approved and a real subagent is available, provide it with the edited source mapping, latest PDF and editable DOCX, rendered page PNGs for both, the crystal candidate-photo audit, stylebook, canonical references and `review/subagent-checklist.md`. Ask for concrete findings with page numbers, severity, evidence and proposed corrections. Do not prime it to approve your work or have it inspect an earlier version.
 
 The reviewer must evaluate three distinct areas: stylebook compliance, Estonian language quality, and visual alignment with the reference. It must also check source fidelity, image identity/credits, prices, side-progress position and factual framing. A language-only review does not satisfy the layout gate.
 
@@ -187,7 +202,7 @@ Only announce “valmis” after all required checks have passed or the user has
 
 ## 11. Delivery
 
-Reply in Estonian. Lead with the result and give working links to the actual created files: PDF, optional editable DOCX, and optionally the self-contained HTML or JSON if useful. Include a concise summary of material editorial/design changes and accurately describe independent review versus self-review. Mention unresolved facts that affect use, such as an unconfirmed price.
+Reply in Estonian. Lead with the result and give working links to the actual created files: **both PDF and editable DOCX**, and optionally the self-contained HTML or JSON if useful. Both required deliverables must contain the same final edited content; do not release a stale Word draft alongside a newer PDF. Include a concise summary of material editorial/design changes and accurately describe independent review versus self-review. Mention unresolved facts that affect use, such as an unconfirmed price.
 
 Do not expose private internal reasoning. Do not include a checklist dump when a short result and important caveat suffice. Do not publish client files, push repository changes, email documents or deploy a site unless the user separately requests that action.
 

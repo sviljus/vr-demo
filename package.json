@@ -6,8 +6,15 @@
   "scripts": {
     "build:sample": "python3 scripts/build.py data/reading-02.json --out build/sample-02.html",
     "pdf:sample": "node scripts/pdf.cjs build/sample-02.html build/sample-02.pdf",
-    "validate:sample": "python3 scripts/validate.py data/reading-02.json"
+    "validate:sample": "python3 scripts/validate.py data/reading-02.json",
+    "word:sample": "python3 scripts/build_docx.py data/reading-02.json --out build/sample-02.docx"
   },
-  "dependencies": {"playwright": "1.62.1", "pdf-lib": "1.17.1"},
-  "engines": {"node": ">=20", "python": ">=3.10"}
+  "dependencies": {
+    "playwright": "1.62.1",
+    "pdf-lib": "1.17.1"
+  },
+  "engines": {
+    "node": ">=20",
+    "python": ">=3.10"
+  }
 }
