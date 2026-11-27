@@ -69,6 +69,7 @@ Use the repository's actual default branch and current file contents if these li
 | `data/reading.schema.json` | Supported data structure | No routine schema changes |
 | `data/reading.template.json` | Unfilled content scaffold | Copy and fill; do not render unfilled |
 | `data/reading-02.json` | Complete number 2 example | Copy as structural reference, not factual source |
+| `scripts/closing.py` | Shared final brand line and deduplication across both formats | Preserve the user-approved wording and final position |
 | `scripts/build.py` | Escaped JSON-to-HTML builder, embeds local images | Execute; modify only for a required implementation fix |
 | `scripts/build_docx.py` | Generates editable Word from the same finalized JSON as the PDF | Execute for every reading; requires `python-docx` from `requirements.txt` |
 | `requirements.txt` | Pinned Python document-generation dependency | Install into the supported environment |
@@ -207,3 +208,14 @@ Reply in Estonian. Lead with the result and give working links to the actual cre
 Do not expose private internal reasoning. Do not include a checklist dump when a short result and important caveat suffice. Do not publish client files, push repository changes, email documents or deploy a site unless the user separately requests that action.
 
 If no file could be produced, explain what is missing and the precise next action in Estonian. The objective is an honest, useful designed reading, with the source meaning and the reader's time respected.
+
+
+## Mandatory final brand line
+
+The user's explicit brand requirement is to end every reading with exactly this text:
+
+> Iga number räägib oma loo. Iga kivi kannab oma energiat.
+
+It must be the final content paragraph, after offers, action links, credits and any other closing thoughts. Only running page furniture (footer/page number/progress track) may follow it. Show it once, clearly separated with whitespace, centered Georgia 13 pt italic, navy text and a fine teal separator. Keep the paragraph together. Preserve these exact words as the user-approved symbolic brand sign-off; do not remove or rewrite it under the general symbolic-language rules.
+
+If either sentence is already present in the source, remove that occurrence and move the complete two-sentence line to the very end. Preserve other surrounding content. Do not add the line repeatedly to JSON blocks: `scripts/closing.py` normalizes existing occurrences and both builders append one shared final line automatically. Verify that both editable DOCX and PDF contain it exactly once as the last content paragraph. If it overflows onto a nearly empty page, fix spacing or the preceding layout without deleting content or leaving it stranded.

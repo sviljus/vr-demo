@@ -4,8 +4,10 @@ from pathlib import Path
 import argparse,json,html,base64,mimetypes
 ROOT=Path(__file__).resolve().parents[1]
 from validate import validate
+from closing import CLOSING, normalize_closing
 
 def render(data,root):
+ data=normalize_closing(data)
  errors=validate(data)
  if errors:raise ValueError("; ".join(errors))
  def esc(x):
@@ -39,7 +41,8 @@ def render(data,root):
  for n,page in enumerate(data['pages']):
   start=''
   if n==0:start='<div class="masthead"><img src="'+image('assets/logo.svg')+'" alt="Vaimuraamat"></div><div class="identity"><p class="tagline">'+esc(data['tagline'])+'</p><p class="number">'+esc(data['number'])+'</p><h1 class="title">Sinu Punkt A energia</h1><p class="energy">'+esc(data['number'])+' · '+esc(data['energy_name'])+'</p><p class="keywords">'+esc(' · '.join(data['keywords']))+'</p><p class="opening">'+esc(data['opening_quote'])+'</p></div>'
-  pages.append('<section class="page" style="--page-index:'+str(n)+';--page-count:'+str(len(data['pages']))+'">'+start+''.join(block(b) for b in page)+'</section>')
+  end='<p class="closing-note">'+esc(CLOSING)+'</p>' if n==len(data['pages'])-1 else ''
+  pages.append('<section class="page" style="--page-index:'+str(n)+';--page-count:'+str(len(data['pages']))+'">'+start+''.join(block(b) for b in page)+end+'</section>')
  template=(root/'templates/reading.html').read_text(encoding='utf-8')
  return template.replace('{{TITLE}}',esc('Vaimuraamat · Punkt A · '+data['number'])).replace('{{NUMBER}}',esc(data['number'])).replace('{{BODY}}',''.join(pages))
 if __name__=='__main__':

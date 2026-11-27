@@ -36,3 +36,5 @@ Iga valmis töö väljundiks on nii muudetav Wordi fail (.docx) kui ka PDF. Iga 
 Roosa servariba näitab lehekülje asukohta kogu lugemises: kolme lehe puhul kolmandik, viie puhul viiendik. Jaotus arvutatakse pärast PDF-i tegeliku lehekülgede arvu selgumist.
 
 Laaditud kliendifailid ja tulemused lähevad Gitist välja jäetud `incoming/` ning `build/` kaustadesse. Avalik repo sisaldab ainult üldist number 2 näidist, kujundust ja tööriistu. Piltide õigused on kirjas [RIGHTS.md](RIGHTS.md) ja [assets/manifest.json](assets/manifest.json).
+
+Iga lugemise viimane sisulõik on eristatud lõpumõte: **Iga number räägib oma loo. Iga kivi kannab oma energiat.** Mõlemad generaatorid lisavad selle ühe korra ja eemaldavad sama mõtte varasemad kordused.

@@ -8,6 +8,7 @@ from docx.shared import Cm,Pt
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from validate import validate
+from closing import CLOSING, normalize_closing
 ROOT=Path(__file__).resolve().parents[1]
 
 def link(p,label,url,size=8):
@@ -23,6 +24,7 @@ def picture(p,relpath,height,alt):
  p.alignment=1;img=WordImage.from_file(str(ROOT/relpath));width=min(5.6,height*img.px_width/img.px_height);height=width*img.px_height/img.px_width;shape=p.add_run().add_picture(str(ROOT/relpath),width=Cm(width),height=Cm(height));shape._inline.docPr.set('descr',alt)
 
 def build(data,out):
+ data=normalize_closing(data)
  errors=validate(data)
  if errors:raise ValueError('; '.join(errors))
  d=Document(ROOT/'templates/reading.docx')
@@ -58,6 +60,8 @@ def build(data,out):
      for text,style in [(item['name'],'Heading 2'),(item['description'],'Card'),('Seos energiaga: '+item['connection'],'Card'),(item['reminder'],'Quote')]:cell.add_paragraph(text,style)
      credit=cell.add_paragraph('','Eyebrow');link(credit,item['credit_text'],item['credit_url']);credit.add_run(' · ');link(credit,'litsents',item['license_url'])
     table.rows[0]._tr.get_or_add_trPr().append(OxmlElement('w:cantSplit'))
+ z=p(CLOSING,'Quote');z.alignment=1;z.paragraph_format.space_before=Pt(18);z.paragraph_format.space_after=Pt(0);z.paragraph_format.line_spacing=1.5;z.paragraph_format.keep_together=True
+ pr=z._p.get_or_add_pPr();borders=OxmlElement('w:pBdr');border=OxmlElement('w:top');border.set(qn('w:val'),'single');border.set(qn('w:sz'),'4');border.set(qn('w:color'),'57A7B3');border.set(qn('w:space'),'10');borders.append(border);pr.append(borders)
  d.core_properties.title='Sinu Punkt A energia · '+data['number'];d.core_properties.author='Vaimuraamat'
  out.parent.mkdir(parents=True,exist_ok=True);d.save(out)
 

@@ -75,3 +75,7 @@ Before staging, check that no personal upload or output entered a tracked direct
 ## Required crystal-image research
 
 For each crystal, open and visually inspect 3–4 candidate photographs, compare the recurring appearance against trusted mineralogical/museum/gemological identification, and verify the selected image's reuse rights. Use `review/crystal-image-review.template.md` to record source URLs, actual visual inspection, representative features, differences in lighting/form, rejection reasons, and the final author/license/credit. Majority resemblance is useful corroboration, not proof of identity. Do not count duplicate stock photos as independent confirmation. Existing sample photos do not establish that a new 3–4-photo search has occurred; record what was actually checked. If research is unavailable, state that and request an approved photo or explicit fallback.
+
+## Final sign-off
+
+Both builders share `scripts/closing.py`. They remove existing copies of the two brand sentences from ordinary text blocks and append one centered, separated final paragraph: “Iga number räägib oma loo. Iga kivi kannab oma energiat.” Do not add trailing content after this paragraph. Running footers are allowed.

@@ -56,3 +56,7 @@ Use the fields in `review/report.template.md` when available. Return:
 Use `BLOCKED` if either required Word/PDF artifact, their rendered visual evidence, or the mandatory crystal candidate-image audit cannot be inspected and no specific user waiver exists, rather than asserting layout conformity. Use `FIX_REQUIRED` for material language, source, rights, price, clipping or progress errors. Minor editorial suggestions should be identified as suggestions rather than blocking defects.
 
 Do not claim certainty about facts absent from the source. Do not send documents to third-party services or commit them to the public repository. The main assistant must apply confirmed corrections, regenerate affected artifacts and recheck the revised final version before announcing completion.
+
+## Final brand sign-off
+
+Verify both Word and PDF end with exactly one occurrence of “Iga number räägib oma loo. Iga kivi kannab oma energiat.” It must follow all body content, offers and links, be centered and visibly separated, and stay together. Ignore only the running footer/page number when identifying the last content. Existing occurrences must have been moved rather than duplicated.

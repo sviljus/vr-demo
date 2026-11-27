@@ -106,3 +106,14 @@ Frame numerology and crystal associations as symbolic interpretation. Do not inf
 Validate the data, generate both editable DOCX and PDF from the same final content, render both and inspect every page. Verify matching final text, energy identity, exercises, prices, photographs and credits across formats. If either required format is absent or unchecked, completion is blocked unless the user explicitly waives that specific requirement. Check all Estonian characters, headings, questions, photos, credits, links, prices, footer and progress positions. Match the reference's system while allowing content-driven pagination. Remove duplicate links, clipping, collisions, split cards and accidental nearly empty overflow pages.
 
 Before completion, apply the independent-review consent workflow in `gen.md`. A technical build pass is not linguistic review; extracted text is not visual review; self-review is not an independent subagent. Record remaining limitations and the version actually checked. Never call an unverified draft complete.
+
+
+## Mandatory final brand line
+
+The user's explicit brand requirement is to end every reading with exactly this text:
+
+> Iga number räägib oma loo. Iga kivi kannab oma energiat.
+
+It must be the final content paragraph, after offers, action links, credits and any other closing thoughts. Only running page furniture (footer/page number/progress track) may follow it. Show it once, clearly separated with whitespace, centered Georgia 13 pt italic, navy text and a fine teal separator. Keep the paragraph together. Preserve these exact words as the user-approved symbolic brand sign-off; do not remove or rewrite it under the general symbolic-language rules.
+
+If either sentence is already present in the source, remove that occurrence and move the complete two-sentence line to the very end. Preserve other surrounding content. Do not add the line repeatedly to JSON blocks: `scripts/closing.py` normalizes existing occurrences and both builders append one shared final line automatically. Verify that both editable DOCX and PDF contain it exactly once as the last content paragraph. If it overflows onto a nearly empty page, fix spacing or the preceding layout without deleting content or leaving it stranded.
