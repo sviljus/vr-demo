@@ -242,7 +242,7 @@
     [
       {
         "role": "label",
-        "text": "PUNKT A  /  KUI SOOVID EDASI AVASTADA"
+        "text": "SINU TEEKOND JÄTKUB"
       },
       {
         "role": "heading",
@@ -250,11 +250,17 @@
       },
       {
         "role": "text",
-        "text": "Need on vabatahtlikud võimalused. Lugemisest saadud mõtteid saad kasutada ka midagi juurde tellimata."
+        "text": "Võid võtta järgmiseks ühe neist võimalustest. Lugemisest saadud mõtteid saad kasutada ka midagi juurde tellimata."
       },
       {
-        "role": "gallery",
-        "items": [
+        "role": "offer",
+        "name": "Personaalne käevõru",
+        "price": "27 €",
+        "regular_price": "33 €",
+        "description": "Sinu sünninumbritest inspireeritud käevõru. Kaasa saad numbrite ja valitud kristallide personaalse selgituse.",
+        "cta": "Tutvu käevõru võimalusega →",
+        "url": "https://vaimuraamat.ee/",
+        "images": [
           {
             "image": "assets/bracelets/bracelet-1.jpg",
             "alt": "Vaimuraamatu värviline liblikaripatsiga käevõru."
@@ -263,49 +269,17 @@
             "image": "assets/bracelets/bracelet-2.jpg",
             "alt": "Vaimuraamatu roosade helmeste ja südameripatsiga käevõru."
           }
-        ]
+        ],
+        "caption": "Näited Vaimuraamatu käevõrudest. Personaalse käevõru kivide ja ripatsi valik võib erineda."
       },
       {
-        "role": "label",
-        "text": "Näited Vaimuraamatu käevõrudest. Personaalse käevõru kivide ja ripatsi valik võib erineda."
-      },
-      {
-        "role": "subheading",
-        "text": "Personaalne käevõru"
-      },
-      {
-        "role": "card",
-        "text": "Sinu sünninumbritest inspireeritud käevõru. Kaasa saad numbrite ja kristallide personaalse selgituse."
-      },
-      {
-        "role": "card",
-        "text": "27 €  ·  tavahind 33 €"
-      },
-      {
-        "role": "link",
-        "text": "Vaata lähemalt vaimuraamat.ee",
+        "role": "offer",
+        "name": "Isikliku aasta numeroloogiline lugemine",
+        "price": "22 €",
+        "regular_price": "25 €",
+        "description": "Sümboolne vaade sinu isikliku aasta võimalustele, väljakutsetele ja eluõppetundidele — teemadele, mille üle rahulikult mõtiskleda.",
+        "cta": "Tutvu aastalugemisega →",
         "url": "https://vaimuraamat.ee/"
-      },
-      {
-        "role": "subheading",
-        "text": "Isikliku aasta numeroloogiline lugemine"
-      },
-      {
-        "role": "card",
-        "text": "Sümboolne vaade isikliku aasta võimalustele, väljakutsetele ja eluõppetundidele ning teemadele, mille üle mõtiskleda."
-      },
-      {
-        "role": "card",
-        "text": "22 €  ·  tavahind 25 €"
-      },
-      {
-        "role": "link",
-        "text": "Vaata lähemalt vaimuraamat.ee",
-        "url": "https://vaimuraamat.ee/"
-      },
-      {
-        "role": "quote",
-        "text": "Sa võid siia tagasi tulla siis, kui tunned selleks soovi."
       }
     ]
   ]

@@ -60,3 +60,7 @@ Do not claim certainty about facts absent from the source. Do not send documents
 ## Final brand sign-off
 
 Verify both Word and PDF end with exactly one occurrence of “Iga number räägib oma loo. Iga kivi kannab oma energiat.” It must follow all body content, offers and links, be centered and visibly separated, and stay together. Ignore only the running footer/page number when identifying the last content. Existing occurrences must have been moved rather than duplicated.
+
+## Offer-card check
+
+Both offers must have the same pale teal background, border, spacing, large right-aligned current price, muted regular price and navy CTA. Check that price text is not clipped in Word, CTA text is legible, photos and caption are inside the bracelet card, and every whole card stays together. Homepage placeholders must not be described as verified service-specific links.

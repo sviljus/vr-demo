@@ -27,6 +27,12 @@ def render(data,root):
   if role=='link':
    if not b['url'].startswith('https://'):raise ValueError('Link peab kasutama HTTPS-i.')
    return '<p class="link"><a href="'+esc(b['url'])+'">'+esc(b['text'])+'</a></p>'
+  if role=='offer':
+   regular='<span class="offer-regular">Tavahind <s>'+esc(b['regular_price'])+'</s></span>' if b.get('regular_price') else ''
+   photos=''
+   if b.get('images'):
+    photos='<div class="offer-photo-area"><div class="offer-photos">'+''.join('<img src="'+image(i['image'])+'" alt="'+esc(i['alt'])+'">' for i in b['images'])+'</div><p class="offer-caption">'+esc(b['caption'])+'</p></div>'
+   return '<article class="offer"><div class="offer-head"><h3 class="offer-title">'+esc(b['name'])+'</h3><div class="offer-price"><strong>'+esc(b['price'])+'</strong>'+regular+'</div></div><p class="offer-desc">'+esc(b['description'])+'</p>'+photos+'<a class="offer-cta" href="'+esc(b['url'])+'">'+esc(b['cta'])+'</a></article>'
   if role=='gallery':return '<div class="gallery">'+''.join('<img src="'+image(i['image'])+'" alt="'+esc(i['alt'])+'">' for i in b['items'])+'</div>'
   if role=='crystals':
    cards=[]

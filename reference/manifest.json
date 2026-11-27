@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "reference/sample-02.pdf",
-      "sha256": "768a95a421f63b51452a503d16006f605e17d20976532be50ab860a385d6ce18"
+      "sha256": "35529ce38517f57ef492acbaad44f136525d2ce09efbae70174f6b167265960f"
     },
     {
       "path": "reference/pages/page-01.png",
@@ -31,11 +31,11 @@
     },
     {
       "path": "reference/pages/page-06.png",
-      "sha256": "3c5b15730b6cf47c364a849b3d1f2aadc70f9c51dadf88b9dfe6a998e71d9d91"
+      "sha256": "65947e2de31bab3adc9469fb56ff20f42d5423b2892ebb4f9008616e09b061e7"
     },
     {
       "path": "reference/sample-02.docx",
-      "sha256": "475116f4250deb4fb130df2d815c4ed106666589bcc591074b743d4b3dd52c34"
+      "sha256": "f56bd67eb3df4205a87a2dcf658d09e2e2f47c265bcd2f7cb697b3d84f8e13c0"
     }
   ],
   "word_output": "reference/sample-02.docx (editable companion; content parity, engine-dependent layout)"

@@ -148,7 +148,7 @@ Create a new private JSON file from `data/reading.template.json`. Consult the sc
 
 The top-level identity is defined once by `number`, `energy_name`, `keywords`, `tagline` and `opening_quote`. Keep all references in body text consistent with it. `schema_version` identifies the data format, not the energy number.
 
-`pages` contains arrays of editorial content groups. Each group begins on a new PDF page, but may flow onto more than one physical page. The group count is not the actual final PDF page count. Supported block roles are `text`, `heading`, `subheading`, `label`, `quote`, `card`, `link`, `crystals` and `gallery`; use their exact documented fields.
+`pages` contains arrays of editorial content groups. Each group begins on a new PDF page, but may flow onto more than one physical page. The group count is not the actual final PDF page count. Supported block roles are `text`, `heading`, `subheading`, `label`, `quote`, `card`, `link`, `crystals`, `gallery` and `offer`; use their exact documented fields.
 
 Crystal items need the name, image, accurate alternative text, description, energy connection, reminder and required attribution/license fields. Apply the mandatory candidate-image protocol below to every crystal before selecting its photo. Real crystal photographs are mandatory: the user explicitly rejected arbitrary geometric illustrations. Do not recreate those drawings or disguise generic AI art as photographs of identified minerals. If no suitable authorized image is available, explain the gap and request an appropriate image rather than inventing one. Bracelet images remain examples and must not imply the exact pictured item will be supplied.
 
@@ -219,3 +219,12 @@ The user's explicit brand requirement is to end every reading with exactly this 
 It must be the final content paragraph, after offers, action links, credits and any other closing thoughts. Only running page furniture (footer/page number/progress track) may follow it. Show it once, clearly separated with whitespace, centered Georgia 13 pt italic, navy text and a fine teal separator. Keep the paragraph together. Preserve these exact words as the user-approved symbolic brand sign-off; do not remove or rewrite it under the general symbolic-language rules.
 
 If either sentence is already present in the source, remove that occurrence and move the complete two-sentence line to the very end. Preserve other surrounding content. Do not add the line repeatedly to JSON blocks: `scripts/closing.py` normalizes existing occurrences and both builders append one shared final line automatically. Verify that both editable DOCX and PDF contain it exactly once as the last content paragraph. If it overflows onto a nearly empty page, fix spacing or the preceding layout without deleting content or leaving it stranded.
+
+
+## Unified offer cards
+
+Use the user's approved matching cards for the final offers. Both cards have the SAME pale teal `#EFF6F6` background, a thin `#BADADD` border, generous 6 mm padding and 6 mm separation. HTML corners are softly rounded (3 mm). Use a left-aligned Georgia 17 pt title and a right-aligned, prominently visible Georgia bold 29 pt current price. Show the regular price below it in muted Arial 8 pt, with the old amount struck through. Do not let price/description disappear into ordinary body text.
+
+Each offer has one short Arial 10.5 pt description and one modest navy CTA with white Arial 9 pt text. Bracelet example photos belong INSIDE the bracelet's card, 36 mm high with preserved aspect ratio, next to the caption that the custom composition can differ. The year-reading card has the same surface, border, padding, price hierarchy and CTA styling; different content may make it shorter. Do not add a white or gradient variant for one offer.
+
+Encode each card as a single `offer` block: `name`, `description`, `price`, optional `regular_price`, `cta`, HTTPS `url`, and optional `images` plus a required `caption` when images are present. Each image item has `image` and `alt`. Render it with the shared HTML/DOCX generators, not as disconnected heading/price/link paragraphs. The sample CTA URLs still point to the homepage; no specific booking/product endpoint has been verified. Preserve or explicitly flag that placeholder rather than inventing a deep link. The final brand sign-off remains after both complete cards.

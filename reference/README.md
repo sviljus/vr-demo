@@ -9,3 +9,5 @@ This baseline includes real crystal photographs with source/license credits, the
 When a design change is explicitly approved, regenerate the PDF and page images together, update the manifest, and inspect every page. Ordinary client documents must go to ignored `build/`, not this folder.
 
 `sample-02.docx` is the editable Word companion generated from the same final JSON by `scripts/build_docx.py`. Both formats are required for future readings. Word pagination and the HTML/PDF renderer can differ; the fixed-layout PDF remains the visual baseline. The Word file was rendered and all six pages inspected when added. The new 3–4-candidate crystal-image research rule is prospective: these older sample photos must not be described as having passed that research audit until a corresponding record is completed.
+
+The current offer-page baseline uses two matching pale teal cards, prominent right-aligned prices, and bracelet photos inside their card. Both HTML and editable Word implement this component. The sample links remain homepage placeholders until service-specific destinations are confirmed.

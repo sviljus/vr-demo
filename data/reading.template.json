@@ -242,7 +242,7 @@
     [
       {
         "role": "label",
-        "text": "PUNKT A  /  KUI SOOVID EDASI AVASTADA"
+        "text": "SINU TEEKOND JÄTKUB"
       },
       {
         "role": "heading",
@@ -250,11 +250,17 @@
       },
       {
         "role": "text",
-        "text": ""
+        "text": "Võid võtta järgmiseks ühe neist võimalustest. Lugemisest saadud mõtteid saad kasutada ka midagi juurde tellimata."
       },
       {
-        "role": "gallery",
-        "items": [
+        "role": "offer",
+        "name": "",
+        "price": "",
+        "regular_price": "",
+        "description": "",
+        "cta": "Tutvu käevõru võimalusega →",
+        "url": "https://vaimuraamat.ee/",
+        "images": [
           {
             "image": "assets/bracelets/bracelet-1.jpg",
             "alt": "Vaimuraamatu värviline liblikaripatsiga käevõru."
@@ -263,49 +269,17 @@
             "image": "assets/bracelets/bracelet-2.jpg",
             "alt": "Vaimuraamatu roosade helmeste ja südameripatsiga käevõru."
           }
-        ]
+        ],
+        "caption": "Näited Vaimuraamatu käevõrudest. Personaalse käevõru kivide ja ripatsi valik võib erineda."
       },
       {
-        "role": "label",
-        "text": "Näited Vaimuraamatu käevõrudest. Personaalse käevõru kivide ja ripatsi valik võib erineda."
-      },
-      {
-        "role": "subheading",
-        "text": "Personaalne käevõru"
-      },
-      {
-        "role": "card",
-        "text": ""
-      },
-      {
-        "role": "card",
-        "text": ""
-      },
-      {
-        "role": "link",
-        "text": "Vaata lähemalt vaimuraamat.ee",
+        "role": "offer",
+        "name": "",
+        "price": "",
+        "regular_price": "",
+        "description": "",
+        "cta": "Tutvu aastalugemisega →",
         "url": "https://vaimuraamat.ee/"
-      },
-      {
-        "role": "subheading",
-        "text": "Isikliku aasta numeroloogiline lugemine"
-      },
-      {
-        "role": "card",
-        "text": ""
-      },
-      {
-        "role": "card",
-        "text": ""
-      },
-      {
-        "role": "link",
-        "text": "Vaata lähemalt vaimuraamat.ee",
-        "url": "https://vaimuraamat.ee/"
-      },
-      {
-        "role": "quote",
-        "text": ""
       }
     ]
   ]

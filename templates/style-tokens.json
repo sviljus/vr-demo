@@ -33,5 +33,17 @@
     "quote_pt": 13,
     "credit_pt": 7.5
   },
-  "progress": "one segment at [(i-1)/N, i/N] of full physical PDF page height; not cumulative"
+  "progress": "one segment at [(i-1)/N, i/N] of full physical PDF page height; not cumulative",
+  "offers": {
+    "background": "#EFF6F6",
+    "border": "#BADADD",
+    "padding_mm": 6,
+    "gap_mm": 6,
+    "radius_mm": 3,
+    "title_pt": 17,
+    "price_pt": 29,
+    "regular_price_pt": 8,
+    "cta_pt": 9,
+    "photo_height_mm": 36
+  }
 }

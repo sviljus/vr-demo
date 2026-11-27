@@ -79,3 +79,7 @@ For each crystal, open and visually inspect 3–4 candidate photographs, compare
 ## Final sign-off
 
 Both builders share `scripts/closing.py`. They remove existing copies of the two brand sentences from ordinary text blocks and append one centered, separated final paragraph: “Iga number räägib oma loo. Iga kivi kannab oma energiat.” Do not add trailing content after this paragraph. Running footers are allowed.
+
+## Offer data
+
+`offer` blocks group `name`, `description`, `price`, optional `regular_price`, `cta`, HTTPS `url`, and optional `images` plus `caption`. Both generators render matching pale teal cards with large right-aligned prices. Product images belong inside the relevant card, not in a detached gallery. Sample CTA URLs are still homepage placeholders, not verified booking links. See `data/reading-02.json` for the exact shape.

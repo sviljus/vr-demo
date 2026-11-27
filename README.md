@@ -38,3 +38,5 @@ Roosa servariba näitab lehekülje asukohta kogu lugemises: kolme lehe puhul kol
 Laaditud kliendifailid ja tulemused lähevad Gitist välja jäetud `incoming/` ning `build/` kaustadesse. Avalik repo sisaldab ainult üldist number 2 näidist, kujundust ja tööriistu. Piltide õigused on kirjas [RIGHTS.md](RIGHTS.md) ja [assets/manifest.json](assets/manifest.json).
 
 Iga lugemise viimane sisulõik on eristatud lõpumõte: **Iga number räägib oma loo. Iga kivi kannab oma energiat.** Mõlemad generaatorid lisavad selle ühe korra ja eemaldavad sama mõtte varasemad kordused.
+
+Pakkumised kasutavad ühesuguseid heleda rohekassinise taustaga kaarte ja suuri hindu. Käevõrufotod paiknevad kaardi sees. Näidisnupud viivad praegu avalehele; konkreetsed teenuselingid vajavad kinnitamist.

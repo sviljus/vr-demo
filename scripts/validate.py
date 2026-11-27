@@ -29,6 +29,16 @@ def validate(d):
    if role in ['text','heading','subheading','label','quote','card','link']:
     txt(b.get('text'),loc+'.text')
     if role=='link':url(b.get('url'),loc+'.url')
+   elif role=='offer':
+    for k in ['name','price','description','cta']:txt(b.get(k),loc+'.'+k)
+    if 'regular_price' in b:txt(b['regular_price'],loc+'.regular_price')
+    url(b.get('url'),loc+'.url')
+    if 'images' in b:
+     items=b['images'];require(isinstance(items,list) and 1<=len(items)<=2,loc+'.images must contain 1–2 items')
+     for item in items if isinstance(items,list) else []:
+      if not isinstance(item,dict):errors.append(loc+'.images must contain objects');continue
+      img(item.get('image'),loc+'.image');txt(item.get('alt'),loc+'.alt')
+     txt(b.get('caption'),loc+'.caption')
    elif role in ['crystals','gallery']:
     items=b.get('items');require(isinstance(items,list) and len(items)>0,loc+'.items must not be empty')
     for ii,item in enumerate(items if isinstance(items,list) else []):
